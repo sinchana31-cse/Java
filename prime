@@ -23,3 +23,68 @@ public class Prime {
         sc.close();
     }
 }
+
+
+
+//ussing isprime
+import java.util.Scanner;
+
+public class IsPrime {
+
+    static boolean isPrime(long n) {
+        if (n <= 1)
+            return false;
+
+        for (long i = 2; i * i <= n; i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        long n = sc.nextLong();
+
+        if (isPrime(n))
+            System.out.println(n + " is a Prime");
+        else
+            System.out.println(n + " is not a Prime");
+
+        sc.close();
+    }
+}
+
+
+//to generate 1 to n
+import java.util.Scanner;
+
+public class Generate1ton{
+
+    static boolean isPrime(long n) {
+        if (n <= 1)
+            return false;
+
+        for (long i = 2; i * i <= n; i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        long n = sc.nextLong();
+
+        System.out.println("Prime numbers from 1 to " + n + ":");
+
+        for (long i = 2; i <= n; i++) {
+            if (isPrime(i))
+                System.out.print(i + " ");
+        }
+
+        sc.close();
+    }
+}
