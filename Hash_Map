@@ -1,0 +1,20 @@
+import java.util.HashMap;
+public class Main7 {
+    public static void main(String[] args) {
+        int[] nums = {4, 5, 2, 4, 5, 9, 2};
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int el = nums[i];
+            hm.put(el, hm.getOrDefault(el, 0) + 1);
+        }
+        for (int i = 0; i < nums.length; i++) {
+            int el = nums[i];
+            if (hm.get(el) == 1) {
+                System.out.println(el);
+                break;
+            }
+        }
+    }
+}
+
+output=9
