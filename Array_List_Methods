@@ -1,0 +1,24 @@
+
+import java.util.*;
+public class Main5
+{
+	public static void main(String[] args) {
+	ArrayList<Integer> al =new ArrayList<>();
+	System.out.println("Size "+al.size());
+	al.add(10);
+	al.add(20);
+	al.add(30);
+	System.out.println("ArrayList= "+al);
+	System.out.println("Size "+al.size());
+	System.out.println("Element at index 2 : "+ al.get(2));
+	al.set(1,100);
+	System.out.println("ArrayList= "+al);
+	al.add(1,4000);
+	System.out.println("ArrayList= "+al);
+	al.remove(2);
+	System.out.println("ArrayList= "+al);
+	
+	System.out.println(al.contains(30));
+	}
+	
+}
