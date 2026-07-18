@@ -31,3 +31,34 @@ output:
         true
         true
         size 0
+
+//INPUT={1 2 3 2 1 4 5}
+OUTPUT={ 1 2}
+INPUT={10 20 30}
+OUTPUT={-1}
+
+import java.util.*;
+
+public class Main10 {
+    public static void main(String[] args) {
+
+        int[] arr = {1, 2, 3, 2, 1, 4, 5};
+
+        HashSet<Integer> set = new HashSet<>();
+        HashSet<Integer> duplicates = new HashSet<>();
+
+        for (int num : arr) {
+            if (!set.add(num)) {   
+                duplicates.add(num);
+            }
+        }
+
+        if (duplicates.isEmpty()) {
+            System.out.println(-1);
+        } else {
+            for (int num : duplicates) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+}
