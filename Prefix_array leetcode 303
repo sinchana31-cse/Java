@@ -1,0 +1,57 @@
+class NumArray {
+
+    int[] prefix;
+
+    public NumArray(int[] nums) {
+
+        prefix = new int[nums.length + 1];
+
+        for (int i = 1; i <= nums.length; i++) {
+            prefix[i] = prefix[i - 1] + nums[i - 1];
+        }
+    }
+
+    public int sumRange(int left, int right) {
+        return prefix[right + 1] - prefix[left];
+    }
+}
+
+//leetcode 2559
+class Solution {
+
+    public int[] vowelStrings(String[] words, int[][] queries) {
+
+        int n = words.length;
+        int[] prefix = new int[n + 1];
+
+        for (int i = 1; i <= n; i++) {
+
+            String s = words[i - 1];
+
+            char first = s.charAt(0);
+            char last = s.charAt(s.length() - 1);
+
+            if (isVowel(first) && isVowel(last))
+                prefix[i] = prefix[i - 1] + 1;
+            else
+                prefix[i] = prefix[i - 1];
+        }
+
+        int[] ans = new int[queries.length];
+
+        for (int i = 0; i < queries.length; i++) {
+
+            int left = queries[i][0];
+            int right = queries[i][1];
+
+            ans[i] = prefix[right + 1] - prefix[left];
+        }
+
+        return ans;
+    }
+
+    public boolean isVowel(char ch) {
+        return ch == 'a' || ch == 'e' || ch == 'i'
+            || ch == 'o' || ch == 'u';
+    }
+}
