@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main8
+{
+	public static void main(String[] args) {
+	Set<Integer> hs =new HashSet<>();
+	System.out.println("size "+hs.size());
+	hs.add(29);
+	System.out.println(hs);
+	hs.add(209);
+	System.out.println("size "+hs.size());
+	System.out.println(hs);
+	hs.add(2009);
+	System.out.println(hs);
+	hs.remove(29);
+	System.out.println(hs);
+	System.out.println(hs.contains(2009));
+	hs.clear();
+	System.out.println(hs.isEmpty());
+	System.out.println("size "+hs.size());
+	
+	}
+}
+
+output:
+        size 0
+        [29]
+        size 2
+        [209, 29]
+        [209, 2009, 29]
+        [209, 2009]
+        true
+        true
+        size 0
