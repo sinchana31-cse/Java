@@ -45,3 +45,27 @@ class Solution {
         return result;
     }
 }
+
+//INPUT={1,2,3,2,1,4,5}
+OUTPUT={1 2}
+INPUT={10 20 30}
+OUTPUT={-1}
+
+import java.util.*;
+public class Main9
+{
+	public static void main(String[] args) {
+    Map<Integer,Integer> hm=new HashMap<>();
+    int[]arr ={1,2,3,2,1,4,5};
+    for(int i=0;i<arr.length;i++)
+    {
+        int el=arr[i];
+        hm.put(el,hm.getOrDefault(el,0)+1);
+    }
+    for(int key:hm.keySet())
+    {
+        if(hm.get(key)>1)
+        System.out.println(key+"");
+    }
+    }
+}
