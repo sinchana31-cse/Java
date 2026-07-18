@@ -62,3 +62,25 @@ public class Main10 {
         }
     }
 }
+
+//LEETCODE 442 Find All Duplicates in an Array
+
+import java.util.*;
+
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+
+        HashSet<Integer> hs = new HashSet<>();
+        ArrayList<Integer> al = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            if (hs.contains(nums[i])) {
+                al.add(nums[i]);
+            } else {
+                hs.add(nums[i]);
+            }
+        }
+
+        return al;
+    }
+}
